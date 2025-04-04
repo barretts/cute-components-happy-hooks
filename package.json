@@ -1,0 +1,51 @@
+{
+  "name": "@barretts/animated-text-hooks",
+  "version": "1.0.0",
+  "description": "A custom React hook for managing state",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "react-component",
+    "hook"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.6",
+    "@storybook/addon-actions": "^8.6.12",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-onboarding": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/experimental-addon-test": "^8.6.12",
+    "@storybook/react": "^8.6.12",
+    "@storybook/react-vite": "^8.6.12",
+    "@storybook/test": "^8.6.12",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@vitest/browser": "^3.1.1",
+    "@vitest/coverage-v8": "^3.1.1",
+    "playwright": "^1.51.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "storybook": "^8.6.12",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.1.1"
+  },
+  "scripts": {
+    "build": "tsup src/*.{ts,tsx,jsx} --dts --format cjs,esm --splitting",
+    "build-storybook": "storybook build",
+    "storybook": "storybook dev -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@types/animejs": "^3.1.13",
+    "animejs": "^3.2.2",
+    "build": "^0.1.4"
+  }
+}
