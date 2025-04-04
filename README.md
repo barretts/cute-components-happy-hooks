@@ -1,4 +1,9 @@
 # cute-components-happy-hooks
 
-![image info](logo512.png)
-React component and hook "library" with things I made
+<p align="center">
+  <img src="logo512.png" />
+</p>
+
+<p align="center">
+  React component and hook "library" with things I made
+</p>
