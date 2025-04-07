@@ -1,5 +1,11 @@
 import anime from "animejs";
 import React, { useRef, useMemo, useEffect } from "react";
+import { styled } from "styled-components";
+
+const AnimatedInlineBlock = styled.span`
+  display: inline-block;
+  will-change: transform;
+`;
 
 const AnimatedText = ({ children }) => {
   const containerRef = useRef(null);
@@ -120,28 +126,20 @@ const AnimatedText = ({ children }) => {
   };
 
   return (
-    <>
-      <div
-        ref={containerRef}
-        className="animated-text"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-      >
-        {words.map((word, index) => (
-          <React.Fragment key={index}>
-            <span className="word">{word}</span>
-            {index < words.length - 1 && <span className="space">&nbsp;</span>}
-          </React.Fragment>
-        ))}
-      </div>
-      <style>{`
-  /* Ensure spans are inline-block so transforms work correctly */
-  .animated-text span {
-    display: inline-block;
-    will-change: transform;
-  }
-    `}</style>
-    </>
+    <div
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      {words.map((word, index) => (
+        <React.Fragment key={index}>
+          <AnimatedInlineBlock className="word">{word}</AnimatedInlineBlock>
+          {index < words.length - 1 && (
+            <AnimatedInlineBlock className="space">&nbsp;</AnimatedInlineBlock>
+          )}
+        </React.Fragment>
+      ))}
+    </div>
   );
 };
 
